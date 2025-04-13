@@ -87,8 +87,9 @@ require("lazy").setup(plugins, opts)
 -- Keymaps
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find Files" })
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live Grep" })
+vim.keymap.set("n", "<C-f>", ":Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope grep current file "})
+vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", { desc = "telescope live grep "})
 vim.keymap.set("n", "<leader>e", ':Neotree filesystem toggle reveal left<CR>', {})
 -- Colorscheme
-require("catppuccin").setup() -- Already configured via opts in plugins
+require("catppuccin").setup() 
 vim.cmd.colorscheme("catppuccin")
